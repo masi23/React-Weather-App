@@ -1,38 +1,332 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrap-content {
+    display: flex;
+    background: linear-gradient(45deg, lightblue, white);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wrap-content > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header-wrap {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    /* background-color: whitesmoke; */
+    width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 20%;
 }
 
-.App-link {
-  color: #61dafb;
+.logo > img {
+    width: 60px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header-nav {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    width: 80%;
+    line-height: 80px;
+    padding: 0 150px;
+}
+
+.header-nav > a {
+    text-decoration: none;
+    color: lightslategray;
+    font-size: 18px;
+}
+
+.header-nav > a:hover {
+    color: #000;
+}
+
+.main-wrap {
+    width: 75%;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+    height: 100%;
+    width: 100%;
+}
+
+form {
+    margin: 25px 0 40px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+form > input {
+    background-color: white;
+    display: block;
+    width: 400px;
+    line-height: 40px;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    color: rgb(9, 9, 56);
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0 20px;
+    outline: none;
+}
+
+form > input::placeholder {
+    color: gray;
+} 
+
+form > button {
+    display: block;
+    line-height: 40px;
+    outline: none;
+    background-color: transparent;
+    border: 2px solid lightgray;
+    color: rgb(9, 9, 56);
+    padding: 5px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: .3s ;
+}
+
+form > button:hover {
+    background-color: lightskyblue;
+    color: #fff;
+    border: 2px solid lightskyblue;
+}
+
+p.updated {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 14px;
+}
+
+.big-tiles {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    gap: 60px;
+}
+
+.tile {
+    width: 40%;
+    height: 400px;
+    background-color: whitesmoke;    
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-top: 50px;
+}
+
+.tile:nth-child(1) {
+    background: linear-gradient(-45deg,  lightblue, rgb(84, 196, 233));
+}
+
+.tile:nth-child(2) {
+    background: linear-gradient(45deg, rgb(251, 231, 164), rgb(228, 202, 119))
+}
+
+.tile > .city-info {
+    display: flex;
+    gap: 40px;
+    padding-left: 50px;
+}
+
+.tile > .city-info > .weather-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-logo > img {
+    width: 60px;
+}
+
+.tile > .city-info > div:nth-child(2) {
+    text-align: left;
+}
+
+.tile > .city-info .top {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.tile > .weather-main-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 110px;
+    margin-top: 20px;
+}
+
+.tile > .weather-main-info .top {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.weather-main-info .top > span {
+    display: inline-flex;
+    background-color: #fff;
+    font-size: 16px;
+    padding:4px;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.tile > .weather-main-info .bottom {
+    font-size: 18px;
+}
+
+.weather-specific-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-top: 40px;
+}
+
+.weather-specific-info > .specific-info-tile {
+    width: 25%;
+    height: 90px;
+    border-radius: 15px;
+    background-color: rgb(9, 9, 56);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.weather-specific-info > .specific-info-tile:nth-child(2) {
+    background-color: #cce16aff;
+    color: #000;
+}
+
+.weather-specific-info > .specific-info-tile:nth-child(3) {
+    background-color: #fff;
+    color: #000;
+}
+
+.weather-specific-info > .specific-info-tile .tile-label {
+    font-size: 15px;
+}
+
+.weather-specific-info > .specific-info-tile .tile-data {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.long-tile {
+    width: 80%;
+    height: 90px;
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.long-tile > .label {
+    display: flex;
+    justify-content: center;
+    gap: 15%;
+    padding-top: 12px;
+    font-size: 14px;
+
+}
+
+.measurement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    position: relative;
+}
+
+.measurement > .base {
+    width: 80%;
+    height: 5px;
+    background: lightblue;
+    border-radius: 10px;
+}
+
+.measurement > .ball {
+    height: 20px;
+    width: 20px;
+    background-color: lightskyblue;
+    border-radius: 50%;
+    position: absolute;
+    /* transform: translateX(35px); */
+    
+}
+
+.blue {
+    background-color: #80d4ff !important;
+}
+
+.yellow {
+    background-color: #ffbb33 !important;
+}
+
+.red {
+    background-color: #ff5c33 !important;
+}
+
+/* ___ASIDE___ */
+
+.aside-wrap {
+    background-color: rgba(206, 238, 248, 0.39);
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+}
+
+.aside-tile {
+    height: 25%;
+    width: 80%;
+    background-color: rgba(128,191,255,.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(0, 119, 230,0.6);
+    text-align: center;
+}
+
+.aside-tile > h1 {
+    display: block;
+    font-size: 30px;
+    padding: 5px 0;
+}
+
+.aside-tile > h2 {
+    color: #000;
+    font-size: 30px;
+}
+
+.aside-tile > p {
+    font-size: 25px;
+    font-weight: 500;
 }
