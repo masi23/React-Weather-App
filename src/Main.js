@@ -23,7 +23,6 @@ const  Main = (props) => {
                         <input type="text" name='cityInput' placeholder="What's your city?"/>
                         <button>Search</button>
                     </form>
-                    <p className="updated">Updated: {updated} <br/> Local time: {localTime}</p>
                     <div className="big-tiles">
                         <div className="tile">
                             <div className="city-info">
@@ -84,6 +83,7 @@ const  Main = (props) => {
                             </div>
                         </div>
                     </div>
+                    <p className="updated">Updated: {updated} <br/> Local time: {localTime}</p>
                 </div>
             </div>
         </>

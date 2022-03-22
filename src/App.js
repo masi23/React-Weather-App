@@ -10,25 +10,7 @@ class App extends Component  {
     ballPosition: 20,
     aqiMeasurePositions: [10,25,50,50,75,90],
     aqiColor: '',
-    popularWeather: [
-      {
-        city: "New York",
-        id: 1,
-        temperature: 12,
-        description: "Rainy"
-      },
-      {
-        city: "Paris",
-        id: 2,
-        temperature: 6,
-        description: "Clouds"
-      },
-      {
-        city: "Berlin",
-        id: 3,
-        temperature: 11,
-        description: "Sunny"
-      }]
+    popularWeather: []
   }
 
   connectApi = (city) => {
@@ -95,7 +77,7 @@ class App extends Component  {
   }
 
   popularPlaces = () => {
-    const popularCities = ["New%20York", "Rome", "Berlin"];
+    const popularCities = ["London", "Tokyo", "Paris"];
     const popularWeather = [];
     for(let i = 0; i < popularCities.length; i++) {
       fetch(apiBase + apiKey + popularCities[i])
@@ -119,7 +101,7 @@ class App extends Component  {
 
   componentDidMount() {
     this.popularPlaces();
-    this.connectApi('London');
+    this.connectApi('Warsaw');
   }
 
   render() {
